@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="mb-4">
+    My Orders
+</h2>
+
+{% for order in orders %}
+
+<div class="card p-3 mb-3">
+
+    <h5>
+        {{ order.product.title }}
+    </h5>
+
+    <p>
+        Quantity: {{ order.quantity }}
+    </p>
+
+    <p>
+        Total Price: ₹ {{ order.total_price }}
+    </p>
+    <h6 class="mt-2">
+
+    Status:
+
+    <span class="badge bg-primary">
+
+        {{ order.status }}
+
+    </span>
+
+</h6>
+
+    <p>
+        Address: {{ order.address }}
+    </p>
+
+</div>
+
+{% endfor %}
+
+{% endblock %}
